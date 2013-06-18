@@ -5,8 +5,8 @@
 var fs = require('fs'),
 	crypto = require('crypto'),
     tls = require('tls'),
-    certPem = fs.readFileSync('apns-prod-cert.pem', encoding='ascii'),
-    keyPem = fs.readFileSync('apns-prod-key-noenc.pem', encoding='ascii'),
+    certPem = fs.readFileSync(__dirname + '/apns-prod-cert.pem', encoding='ascii'),
+    keyPem = fs.readFileSync(__dirname + '/apns-prod-key-noenc.pem', encoding='ascii'),
     caCert = fs.readFileSync(__dirname + '/ApplePush.cer', encoding='ascii'),
     options = { key: keyPem, cert: certPem, ca: [ caCert ] },
     http = require('http');
